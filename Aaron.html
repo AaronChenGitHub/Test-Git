@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <script src='https://cdnjs.cloudflare.com/ajax/libs/jquery/3.6.0/jquery.js'
+        integrity='sha512-n/4gHW3atM3QqRcbCn6ewmpxcLAHGaDjpEBu4xZd47N0W2oQ+6q7oc3PXstrJYXcbNU1OHdQ1T7pAP+gi5Yu8g=='
+        crossorigin='anonymous'></script>
+    <title>Document</title>
+</head>
+
+<body>
+    <div id="d1"></div>
+    <hr>
+    <button id="btn">點擊</button>
+
+
+</body>
+<script>
+
+    var arrObj = [
+        { name: "aaron", age: "18", phone: "123456" },
+        { name: "reds", age: "20", phone: "123456" },
+        { name: "wei", age: "22", phone: "123456" }
+    ]
+
+    arrObj.forEach(prop => {
+
+        $('#btn').on('click', function () {
+            var s = $('#d1').after('<button>' + prop.name + '</button>')
+            $('button[id!=btn]').on('click', function () {
+            });
+            alert('Name:' + prop.name + '/' + 'Age:' + prop.age + '/' + 'Phone:' + prop.phone);
+            $('#btn').off('click');
+        });
+        
+    });
+    
+               
+            
+
+    
+
+
+
+
+
+
+
+</script>
+
+</html>
